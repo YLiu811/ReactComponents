@@ -2,23 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  let lists = ["1h", "2e", "3l", "4lo"];
+  let listsHTML = lists.map((list) => {
+    return (<li>{list}</li>)
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          My new app
-        </a>
-      </header>
-    </div>
+    <ul className='listsHTML'>
+      {listsHTML}
+    </ul>
   );
 }
 
