@@ -1,4 +1,5 @@
 import'./Comments.css';
+import Comment from './Comment';
 
 function Comments () {
     let commentsData = [
@@ -6,19 +7,15 @@ function Comments () {
         { creator: "Bov", comments: "GOOD", likedCount: 10 },
         { creator: "Celine", comments: "NICE", likedCount: 2 },
     ];
-    <div className='comments'>
-    {commentsData.map((comment)=> {
+
     return (
-        <div className='comment'>
-            <h3 classname='comment-header'>{ comment.creator }</h3>
-            <p className='comment-body'>{ comment.comment }</p>
-            <div className='comment-actions'>
-                <button>Like</button>
-                <span> {comment.likedCount }</span>
-            </div>
+        <div className='comments'>
+        {commentsData.map((comment)=> {
+            return (
+                <Comment comment={comment} />
+            )
+        })}
         </div>
-    )  
-    })}
-    </div>
+    )
 }
 export default Comments;
